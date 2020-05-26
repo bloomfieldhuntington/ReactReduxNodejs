@@ -1,7 +1,9 @@
 import { GET_EXAMPLE_DATA, GET_EXAMPLE_DATA_ERROR } from '../actions/types';
 
 // Setting the state object
-const initialState = {};
+const initialState = {
+    clothes: null
+};
 
 export default function(state = initialState, action) {
     const { type, payload } = action;
@@ -10,7 +12,7 @@ export default function(state = initialState, action) {
         case GET_EXAMPLE_DATA:
         return {
             ...state,
-            payload
+            clothes: payload
         }
         case GET_EXAMPLE_DATA_ERROR:
         return {

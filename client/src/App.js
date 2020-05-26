@@ -4,9 +4,14 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // Redux
 import { Provider } from 'react-redux';
 import store from './store';
-// Example object
-var nothingSpecial = () => {};
+
 // MARK:- Components
+import ExampleComponent from './components/ExampleComponent';
+import Landing from './components/landing/Landing';
+
+// Example object, ignore for now
+var nothingSpecial = () => {};
+
 
 
 const App = () => {
@@ -17,8 +22,8 @@ const App = () => {
       <Router>
         <Switch>
           {/* PLACE ROUTES HERE */}
-          <Fragment>Hello</Fragment>
-          
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/example" component={ExampleComponent} />
         </Switch>
       </Router>
     </Provider>

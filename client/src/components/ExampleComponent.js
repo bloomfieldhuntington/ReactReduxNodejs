@@ -1,17 +1,24 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-dom';
+import { connect } from 'react-redux';
 
-const ExampleComponent = () => {
+import { getExampleData } from '../actions/example';
+
+const ExampleComponent = ( getExampleData ) => {
+    
     return (
         <Fragment>
-            
+            Example Component
         </Fragment>
     )
 }
 
 ExampleComponent.propTypes = {
-
+    getExampleData: PropTypes.func.isRequired
 }
 
-export default ExampleComponent
+const mapStateToProps = (state) => ({
+    example: state.example
+})
+
+export default connect(mapStateToProps, {getExampleData})(ExampleComponent)

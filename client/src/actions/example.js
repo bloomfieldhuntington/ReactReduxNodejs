@@ -2,7 +2,7 @@ import axios from 'axios';
 import { GET_EXAMPLE_DATA, GET_EXAMPLE_DATA_ERROR} from './types';
 
 // Get example data from server.js
-export const get_example_data = () => async dispatch => {
+export const getExampleData = () => async dispatch => {
 
     try {
         // Try to get data from server
